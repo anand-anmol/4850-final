@@ -34,16 +34,14 @@ pipeline{
                 expression { params.TEST }
             }
             steps {
-                script {
                     sh 'python3 test_book_manager.py'
-                    post {
-                        always {
-                            script {
-                                def test_reports_exist = fileExists 'test-reports'
-                                if (test_reports_exist) {                        
-                                    junit 'test-reports/*.xml'
-                                }
-                            }
+            }
+            post {
+                always {
+                    script {
+                        def test_reports_exist = fileExists 'test-reports'
+                        if (test_reports_exist) {                        
+                            junit 'test-reports/*.xml'
                         }
                     }
                 }
