@@ -50,9 +50,6 @@ pipeline{
             }
         }
         stage('Package') {
-            when {
-                expression { env.GIT_BRANCH == 'origin/main' }
-            }
             steps {
                 sh 'zip package.zip *.py'
                 archiveArtifacts artifacts: 'package.zip'
