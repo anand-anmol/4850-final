@@ -1,7 +1,8 @@
 /*
 Name: Anmol Anand - A01174846
 Date: December 8, 2021
-Description: TODO
+Description: Pipeline builds, checks for quality, records
+             quantity, tests, and packages the code from SCM
  */
 
 pipeline{
